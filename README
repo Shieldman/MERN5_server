@@ -1,0 +1,80 @@
+# Car API Documentation
+
+## Introduction
+
+Welcome to the Car API documentation. This API allows you to manage car data through Create, Read, Update, and Delete (CRUD) operations. It is designed to work with a MongoDB database and provides various endpoints for interacting with car records.
+
+## Endpoints
+
+### List All Cars
+
+- **Endpoint:** `GET /cars`
+- **Description:** Retrieve a list of all cars, with optional filtering by name.
+- **Parameters:**
+    - `filter` (optional): A case-insensitive name filter.
+- **Response:**
+    - `200 OK`: Returns a JSON array containing car data.
+    - `500 Internal Server Error`: In case of an error.
+
+### Create a Car
+
+- **Endpoint:** `POST /cars`
+- **Description:** Create a new car with the provided information.
+- **Request Body:**
+    - `model` (required): Car model name.
+    - `horsepower` (required): Car horsepower.
+    - `year` (required): Manufacturing year.
+    - `color` (required): Car color.
+    - `kilometers` (required): Mileage in kilometers.
+- **Response:**
+    - `201 Created`: Returns JSON with the newly created car's data.
+    - `500 Internal Server Error`: In case of an error.
+
+### Get Car by ID
+
+- **Endpoint:** `GET /cars/:id`
+- **Description:** Retrieve a car by its unique ID.
+- **Parameters:**
+    - `id` (required): Unique car identifier.
+- **Response:**
+    - `200 OK`: Returns JSON with the car's data.
+    - `500 Internal Server Error`: In case of an error.
+
+### Update Car by ID
+
+- **Endpoint:** `PUT /cars/:id`
+- **Description:** Update a car's information by its ID.
+- **Parameters:**
+    - `id` (required): Unique car identifier.
+- **Request Body:**
+    - `model` (optional): Updated car model name.
+    - `horsepower` (optional): Updated car horsepower.
+    - `year` (optional): Updated manufacturing year.
+    - `color` (optional): Updated car color.
+    - `kilometers` (optional): Updated mileage in kilometers.
+- **Response:**
+    - `200 OK`: Returns JSON with the updated car's data.
+    - `500 Internal Server Error`: In case of an error.
+
+### Delete Car by ID
+
+- **Endpoint:** `DELETE /cars/:id`
+- **Description:** Delete a car by its unique ID.
+- **Parameters:**
+    - `id` (required): Unique car identifier.
+- **Response:**
+    - `200 OK`: Returns a success message indicating the car was deleted.
+    - `500 Internal Server Error`: In case of an error.
+
+## Request and Response Format
+
+- Requests should be in JSON format.
+- Successful responses return JSON data.
+- Error responses return a `500 Internal Server Error` with an error message.
+
+## Authentication and Authorization
+
+This API does not include authentication or authorization mechanisms. Ensure proper security measures are in place on your server.
+
+For detailed information and examples, refer to the full documentation.
+
