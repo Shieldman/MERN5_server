@@ -72,9 +72,4 @@ Welcome to the Car API documentation. This API allows you to manage car data thr
 - Successful responses return JSON data.
 - Error responses return a `500 Internal Server Error` with an error message.
 
-## Authentication and Authorization
-
-This API does not include authentication or authorization mechanisms. Ensure proper security measures are in place on your server.
-
-For detailed information and examples, refer to the full documentation.
 
