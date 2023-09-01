@@ -1,10 +1,18 @@
 const express = require("express");
+const {
+  getAllCars,
+  createCar,
+  getCarById,
+  updateCarById,
+  deleteCarById,
+} = require("../controllers/cars");
 
 const carsRouter = express.Router();
 
-carsRouter.get("/",(req,res,next)=>{
-    console.log('Hola funciona!');
-    res.status(200).json({data:'Hola!'})
-});
+carsRouter.get("/", getAllCars);
+carsRouter.get("/:id", getCarById);
+carsRouter.post("/", createCar);
+carsRouter.put("/:id", updateCarById);
+carsRouter.delete("/:id", deleteCarById);
 
 module.exports = carsRouter;

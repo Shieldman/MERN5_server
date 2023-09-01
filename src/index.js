@@ -1,9 +1,11 @@
 require("dotenv").config(); //siempre inicialmente
+require("./config/db");
 const express = require("express");
 const cors = require("cors");
 const carsRouter = require("./routes/cars");
 
 const app = express();
+app.use(express.json());
 
 app.use(
   cors({
