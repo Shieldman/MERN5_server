@@ -6,4 +6,4 @@ mongoose.set("strict", false);
 mongoose.set("strictQuery", false);
 mongoose.set("strictPopulate", false);
 
-mongoose.connect(process.env.MONGO_URL).then(()=>console.log('Conectado a la db'));
+mongoose.connect('mongodb://localhost:27017/cars').then(()=>console.log('Conectado a la db'));
